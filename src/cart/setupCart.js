@@ -13,6 +13,7 @@ let cart = getStorageItem("cart");
 
 export const addToCart = (id) => {
   let item = cart.find((cartItem) => cartItem.id === id);
+
   if (!item) {
     let product = findProduct(id);
     // add item to cart
@@ -23,11 +24,14 @@ export const addToCart = (id) => {
     addToCartDOM(product);
   } else {
     //update values
+
     const amount = increaseAmount(id);
+
     const items = [...cartItemsDOM.querySelectorAll(".cart-item-amount")];
+
     const newAmount = items.find((value) => value.dataset.id === id);
 
-    // newAmount.textContent = amount; ////////////////////////////////////////
+    newAmount.textContent = amount;
   }
 
   displayCartItemCount();

@@ -4,7 +4,7 @@ import "../cart/toggleCart.js";
 import "../cart/setupCart.js";
 // specific
 import { addToCart } from "../cart/setupCart.js";
-import { singleProductUrl, getElement, formatPrice } from "../utils.js";
+import { singleProductUrl, getElement } from "../utils.js";
 
 const loading = getElement(".page-loading");
 const centerDOM = getElement(".single-product-center");
